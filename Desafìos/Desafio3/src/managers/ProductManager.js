@@ -1,6 +1,6 @@
-const fs = require('fs');
+import fs from 'fs';
 
-class ProductManager{
+export default class ProductManager{
     constructor(path) {
         this.path = path;
     }
@@ -44,11 +44,16 @@ class ProductManager{
         }
     }
 
-    getProducts = async () => {
+    getProducts = async (limit) => {
         try {
             if (fs.existsSync(this.path)) {
                 const data = await fs.promises.readFile(this.path, 'utf-8');
                 const products = JSON.parse(data)
+
+                if (limit) {
+                    return products.slice(0, limit);
+                }
+
                 return products;
 
             } else {
@@ -63,8 +68,11 @@ class ProductManager{
     getProductById = async (id) => {
         try{
             const products = await this.getProducts();
+
             const foundProduct = products.find(product => product.id === id);
-        
+                        
+            console.log("Producto encontrado:", foundProduct); // Log para ver si se encontró el producto
+            
             if (foundProduct) {
                 return foundProduct;
             } else {
@@ -75,7 +83,7 @@ class ProductManager{
             console.log(error);
         }
     }
-
+    
     updateProduct = async (id, updatedProduct) => {
         try {
             const products = await this.getProducts();            
@@ -117,8 +125,4 @@ class ProductManager{
             console.log(error);
         }
     }
-}
-
-module.exports = {
-    ProductManager
 }
