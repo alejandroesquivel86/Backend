@@ -34,7 +34,10 @@ router.put('/:cid/product/:pid', async (req, res) => {
         const idProduct = Number(req.params.pid);
 
         // Verifica si el producto existe
-        const product = await productManager.getProductById(idProduct);
+        const productExists = await productManager.getProductById(idProduct);
+        if (!productExists) {
+            throw new Error(`Product with ID = ${idProduct} does not exist.`);
+        }
 
         await cartManager.updateCart(idCart, idProduct);
         res.status(200).send({ status: 'success' })
