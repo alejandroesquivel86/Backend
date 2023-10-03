@@ -1,0 +1,63 @@
+[
+	{
+		"title": "Dunk Nike",
+		"description": "Dale un giro a tu look con el estilo de básquetbol retro del Nike Dunk Low. Creado para la cancha, pero llevado a las calles, este ícono del básquetbol de los 80 regresa con cuero brillante y todo el flash que necesitas para brillar. Canalizando un estilo vintage, el cuello acolchado y de perfil bajo te permiten llevar cómodamente tu juego a cualquier lugar.",
+		"price": 100000,
+		"thumbnail": "Sin imagen",
+		"code": "abc123",
+		"stock": 10,
+		"status": true,
+		"category": "Dunk",
+		"id": 1
+	},
+	{
+		"id": 2,
+		"title": "Nike Air Force 1 Low Retro",
+		"description": "Dile que sí (de nuevo) al calzado que quieres usar el resto de tu vida. El Nike Air Force 1 Low Retro, que recupera los materiales originales y mantiene todo lo que más te gusta: la confección de cuero clásico y la cantidad perfecta de estilo de básquetbol, rinde homenaje al ícono de la moda diaria. Ahora incluye un cepillo de limpieza para el calzado deportivo para mantener tu look fresco.",
+		"price": 113999,
+		"thumbnail": "Sin imagen",
+		"code": "abc1234",
+		"stock": 5,
+		"category": "Air force"
+	},
+	{
+		"id": 3,
+		"title": "Nike Metcon 8 AMP",
+		"description": "Persiguen el reloj, retándose y alentándose unos a otros en nombre de lograr objetivos y mejorar. Nuestro modelo de entrenamiento por excelencia se basa en una parte superior más ligera y transpirable que la edición anterior para complementar nuestros estándares de durabilidad y comodidad, para que puedas flotar en tu cardio, impulsarte en los levantamientos y dominar tus entrenamientos. Este Metcon 8 AMP te ayuda a volar bajo el radar con colores esfumados de camuflaje que permiten que otros se jacten y conversen mientras te entrenas sin que nadie lo note.",
+		"price": 104999,
+		"thumbnail": "Sin imagen",
+		"code": "abc12345",
+		"stock": 1,
+		"category": "Entrenamiento"
+	},
+	{
+		"title": "Producto Ejemplo",
+		"description": "Descripción del producto",
+		"price": 100,
+		"status": "activo",
+		"code": "prod123",
+		"stock": 50,
+		"category": "Categoría Ejemplo",
+		"id": 4
+	},
+	{
+		"title": "Producto Ejemplo 2",
+		"description": "Descripción del producto 2",
+		"price": 100,
+		"status": true,
+		"code": "prod1234",
+		"stock": 50,
+		"category": "Categoría Ejemplo",
+		"id": 5
+	},
+	{
+		"title": "Producto Ejemplo 3",
+		"description": "Descripción del producto 3",
+		"price": 100,
+		"status": false,
+		"code": "prod12345",
+		"stock": 50,
+		"category": "Categoría Ejemplo",
+		"id": 6
+	}
+]
