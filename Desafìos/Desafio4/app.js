@@ -13,7 +13,7 @@ const productsFilePath = path.join(__dirname, "./files/products.json");
 const productManager = new ProductManager(productsFilePath);
 
 const app = express();
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(`${__dirname}/public`));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,8 +32,15 @@ const io = new Server(server);
 app.set('socketio', io);
 
 
-io.on('connection', socket => {
+io.on('connection', async socket => {
     console.log('Nuevo cliente conectado');
+
+    try {
+        const currentProducts = await productManager.getProducts();
+        socket.emit('showProducts', currentProducts);
+    } catch (error) {
+        console.error("Error al cargar productos iniciales:", error);
+    }
 
     socket.on('addProduct', async (data) => {
         console.log(data)

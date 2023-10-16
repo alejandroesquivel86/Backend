@@ -59,5 +59,15 @@
 		"stock": 50,
 		"category": "Categoría Ejemplo",
 		"id": 6
+	},
+	{
+		"title": "ALE",
+		"description": "ALE",
+		"code": "1",
+		"price": 1000,
+		"status": true,
+		"stock": 1000,
+		"category": "1",
+		"id": 7
 	}
 ]

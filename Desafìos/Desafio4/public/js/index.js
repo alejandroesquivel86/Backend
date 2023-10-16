@@ -27,13 +27,24 @@ socket.on('showProducts', data => {
 form1.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const newProduct = JSON.parse(document.getElementById('addproduct').value);
-    socket.emit('addProduct',  newProduct );
+    const newProduct = {
+        title: document.getElementById('title').value,
+        description: document.getElementById('description').value,
+        code: document.getElementById('code').value,
+        price: parseFloat(document.getElementById('price').value),
+        status: document.getElementById('status').checked, // Aquí capturamos el valor booleano
+        stock: parseInt(document.getElementById('stock').value, 10),
+        category: document.getElementById('category').value
+    };
+
+    socket.emit('addProduct', newProduct);
 });
+
 
 form2.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    const id = document.getElementById('removeproduct').value;
-    socket.emit('removeproduct',  id );
+    // Recoge el valor del campo de entrada "removeproduct"
+    const productIdToRemove  = document.getElementById('removeproduct').value;
+    // Emite el ID del producto a eliminar al servidor usando socket.io
+    socket.emit('removeproduct',  productIdToRemove  );
 });
